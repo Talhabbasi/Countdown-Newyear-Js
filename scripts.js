@@ -20,9 +20,13 @@ function timerSetter() {
     console.log(days ,hour,min ,sec)
     
     daysel.innerHTML=days;
-    hoursel.innerText=hour;
-    minele.innerText=min
-    secele.innerText=sec
+    hoursel.innerText=timeset(hour)
+    minele.innerText=timeset(min)
+    secele.innerText=timeset(sec)
+}
+function timeset(time) {
+    return time < 10 ? `0${time}` : time
+    
 }
 timerSetter();
 setInterval(timerSetter,1000)
